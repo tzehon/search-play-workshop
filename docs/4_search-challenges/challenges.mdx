@@ -1,0 +1,189 @@
+---
+sidebar_position: 5
+---
+
+# Search Challenges
+
+Now that you've learned about basic and advanced search techniques, it's time to put your skills to the test! Here are four challenges for you to tackle using the Atlas Search Playground.
+
+## Challenge 1: Find Ocean View Apartments
+
+Your task is to find all apartments with "Ocean View" in their name that can accommodate at least 4 people.
+
+<details>
+<summary>Hint</summary>
+
+Think about using a compound query with text search and a range query.
+
+</details>
+
+<details>
+<summary>Answer</summary>
+
+```json
+[{
+  $search: {
+    "compound": {
+      "must": [
+        {
+          "text": {
+            "query": "Ocean View",
+            "path": "name"
+          }
+        },
+        {
+          "range": {
+            "path": "accommodates",
+            "gte": 4
+          }
+        }
+      ]
+    }
+  }
+}]
+```
+
+</details>
+
+## Challenge 2: Budget-Friendly Stays
+
+Find all listings with a price per night between $50 and $100, sorted from lowest to highest price.
+
+<details>
+<summary>Hint</summary>
+
+Use a range query for the price, and think about how to sort the results.
+
+</details>
+
+<details>
+<summary>Answer</summary>
+
+```json
+{
+  $search: {
+    "range": {
+      "path": "pricePerNight",
+      "gte": 50,
+      "lte": 100
+    }
+  }
+}
+```
+
+Then, in the aggregation pipeline:
+
+```json
+{
+  $sort: {
+    "pricePerNight": 1
+  }
+}
+```
+
+Full pipeline:
+```
+[
+  {
+    $search: {
+      "range": {
+        "path": "pricePerNight",
+        "gte": 50,
+        "lte": 100
+      }
+    }
+  },
+  {
+    $sort: {
+      "pricePerNight": 1
+    }
+  }
+]
+```
+
+</details>
+
+## Challenge 3: Fuzzy Search
+
+We got a message from an owner of a home appartment stating that their emails was wrongly registered, correct email is trace@gmail.com. Help find a similar email address in the dataset.
+
+
+<details>
+<summary>Hint</summary>
+
+Remember the fuzzy text search we learned about earlier with maxEdits of more than 1.
+
+</details>
+
+<details>
+<summary>Answer</summary>
+
+```json
+[{
+  $search: {
+    "text": {
+      "query": "trace@gmail.com",
+      "path": "host_email",
+      "fuzzy": {
+        "maxEdits": 2
+      }
+  }
+}
+}]
+```
+
+</details>
+
+## Challenge 4: Superhosts with Luxury Apartments
+
+Find all listings by superhosts that are either "Entire home/apt" and can accommodate more than 4 people, or have "luxury" in their name.
+
+<details>
+<summary>Hint</summary>
+
+This will require a more complex compound query with multiple conditions.
+
+</details>
+
+<details>
+<summary>Answer</summary>
+
+```json
+[{
+  $search: {
+    "compound": {
+      "should": [
+        {
+          "compound": {
+            "must": [
+              {
+                "equals": {
+                  "path": "room_type",
+                  "value": "Entire home/apt"
+                }
+              },
+              {
+                "range": {
+                  "path": "accommodates",
+                  "gt": 4
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": {
+            "query": "luxury",
+            "path": "name"
+          }
+        }
+      ],
+      "minimumShouldMatch": 1
+    }
+  }
+}]
+```
+
+</details>
+
+Congratulations on completing these challenges! Remember, there may be multiple ways to achieve the same result. The important thing is that your queries return the correct results efficiently.
