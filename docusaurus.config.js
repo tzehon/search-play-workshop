@@ -4,6 +4,8 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const workshopName = 'search-play-workshop';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Atlas Search Playground Workshop',
@@ -14,7 +16,7 @@ const config = {
   url: 'https://your-docusaurus-test-site.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: `/${workshopName}/`,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
