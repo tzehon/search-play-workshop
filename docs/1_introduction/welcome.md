@@ -31,4 +31,8 @@ By the end of this workshop, you'll be able to create sophisticated search funct
 
 To begin, please navigate to the [Atlas Search Playground](https://search-playground.mongodb.com/). In the next section, we'll guide you through setting up your environment and writing your first query.
 
+## Kick-off Video
+
+https://mdb.link/search-play-video
+
 Let's dive into the world of Atlas Search using this convenient and powerful playground!
