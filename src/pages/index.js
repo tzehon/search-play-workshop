@@ -12,13 +12,13 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Atlas Search Playground Workshop</h1>
-        <p className="hero__subtitle">So easy to search!</p>
+        <h1 className="hero__title">Atlas Search Fundamentals</h1>
+        <p className="hero__subtitle">the workshop</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/introduction/welcome">
-            Start the Atlas Search Playground Workshop
+            Start the Atlas Search Fundamentals Workshop
           </Link>
         </div>
       </div>
