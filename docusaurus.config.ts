@@ -39,8 +39,8 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -65,9 +65,8 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/mongodb-developer/search-play-workshop',
           label: 'GitHub',
           position: 'right',
         },
@@ -93,7 +92,7 @@ const config: Config = {
           href: `https://learn.mongodb.com/`,
         },
         {
-          href: `https://github.com/mongodb-developer/atlas-search-labs`,
+          href: `https://github.com/mongodb-developer/search-play-workshop`,
           label: "This lab in GitHub",
         },
         {
@@ -101,7 +100,7 @@ const config: Config = {
           href: "#",
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} MongoDB. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
