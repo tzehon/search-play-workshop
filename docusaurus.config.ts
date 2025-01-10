@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 const workshopName = 'search-play-workshop'
 
 const config: Config = {
-  title: 'Atlas Playground Search Workshop',
-  tagline: 'Search is easy!',
+  title: 'Atlas Search Fundamentals',
+  tagline: 'the workshop',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -17,8 +17,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'organizationName', // Usually your GitHub org/user name.
+  projectName: 'projectName', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -53,9 +53,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Atlas Search Playground Workshop',
+      title: 'Atlas Search Fundamentals Workshop',
       logo: {
-        alt: 'Atlas Search Playground Workshop Logo',
+        alt: 'Atlas Search Fundamentals Workshop logo',
         src: 'img/logo.svg',
       },
       items: [
