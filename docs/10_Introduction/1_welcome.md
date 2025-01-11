@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Welcome to Atlas Search Fundamentals Workshop
+# Welcome to the Atlas Search Fundamentals Workshop
 
-Welcome to the Atlas Search Playground Workshop! In this interactive session, you'll learn how to use the MongoDB Atlas Search Playground to create and test powerful search queries for an Airbnb-like dataset, all without the need for setting up your own cluster.
+Welcome to the Atlas Search Fundamentals Workshop! In this interactive session, you'll learn how to use the MongoDB Atlas Search Playground to create and test powerful search queries for an Airbnb-like dataset, all without the need for setting up your own cluster.
 
 ## What You'll Learn
 
