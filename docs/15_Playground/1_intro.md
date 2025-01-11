@@ -1,0 +1,18 @@
+# 📘 Atlas Search Playground
+
+The Atlas Search Playground (or just Playground) is used for the exercises in this workshop.  The Playground is a self-contained lightweight, yet feature-rich Atlas Search environment which does not require an Atlas account to use.
+
+There are two tools in the Playground:
+  * Code Sandbox: your data, an index configuration, an aggregation pipeline, and results
+  * Search Demo Builder: a configurable search UI on your data
+
+The exercises will use the Code Sandbox, as it allows saving and sharing links to the full environment and corresponds directly to the configuration and pipeline one would use in a real application.
+
+## Code Sandbox layout
+
+To begin, please navigate to the [Atlas Search Playground](https://search-playground.mongodb.com/). In the next section, you'll work through the first exercise to get familiar with the Playground's Code Sandbox.
+
+Let's dive into the world of Atlas Search using this convenient and powerful playground!
+
+## Resources
+* https://www.mongodb.com/developer/products/atlas/search-playground-intro/

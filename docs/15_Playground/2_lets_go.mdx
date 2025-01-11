@@ -1,0 +1,36 @@
+# 👐 Our first playground exercise
+
+1. Navigate to this Playground snapshot: 
+   https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6782aea0667feaaf06324b87
+2. Press "Run" (TODO: bring in the Run graphic)
+3. Notice the empty `[]` results
+
+The objective with this exercise is to adjust the `FIX_ME` in the `$search` aggregation pipeline stage so that the document (in the Data Source pane) matches the query and appears in the Results pane.
+
+TODO: insert un-fixed playground screenshot
+
+<details>
+<summary>Here's a solution</summary>
+<div>
+```js
+[
+  {
+    $search: {
+      index: "default",
+      text: {
+        query: "search",
+        path: "title"
+      }
+    }
+  }
+]
+```
+</div>
+</details>
+
+<details>
+<summary>There are other possible solutions too</summary>
+<div>
+`atlas` or `fundamentals` or other case variations of any `title` field words
+</div>
+</details>
