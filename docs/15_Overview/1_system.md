@@ -2,7 +2,6 @@
 
 ![system diagram](/img/system_diagram.png)
 
-
 ## Coupled nodes
 ![coupled nodes](/img/coupled.png)
 
