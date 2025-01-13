@@ -5,6 +5,8 @@
 * rename .md's to .mdx's
 * rename Playground section to something else - it's the workshop practicals
 * should completed/solved playgrounds be saved and linked in here as well?
+* Add coverage of "index objects" counting
+* Add transition verbiage at the end of each page/section to lead into the next one
 
 Cool Tricks
 Which clause matches?

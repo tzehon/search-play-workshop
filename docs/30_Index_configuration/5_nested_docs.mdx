@@ -1,0 +1,15 @@
+# 📘 Nested documents
+
+A document can contain a nested document, or an array of them.
+
+There are two distinct ways to map and index the contents of nested documents.
+
+## `document`
+
+Default dynamic mapping behavior, flattens nested documents into “arrays” of values on main document
+
+## `embeddedDocuments`
+
+Attribute pattern `elemMatch`-like matching, more nuanced and expensive than document type flattening
+
+WARNING: Each nested document mapped as as `embeddedDocuments` counts as an additional "index object".
