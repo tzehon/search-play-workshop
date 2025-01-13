@@ -6,7 +6,7 @@ There are two tools in the Playground:
   * `Code Sandbox`: your data, an index configuration, an aggregation pipeline, and results
   * `Search Demo Builder`: a configurable search UI on your data
 
-The exercises will use the Code Sandbox, as it allows saving and sharing links to the full environment and allows us to work on one topic at a time.
+The exercises will only use the Code Sandbox, as it allows saving and sharing links to the full environment and allows us to work on one topic at a time. We'll cover the Search Demo Builder briefly near the end of thw workshop.
 
 ## Code Sandbox layout
 

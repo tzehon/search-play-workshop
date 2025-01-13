@@ -1,6 +1,4 @@
-# Welcome
-
-Welcome to the Atlas Search Fundamentals Workshop! In this interactive session, you'll learn how to use the MongoDB Atlas Search Playground to create and test powerful search queries for an Airbnb-like dataset, all without the need for setting up your own cluster.
+# Welcome!
 
 This workshop presents the fundamental concepts of the full-text search capabilities provided by Atlas Search, and empowers developers with best practice techniques to bring powerful search experiences to their applications. Developers will engage with a number of practical exercises to gain experience and confidence in understanding textual analysis and tokenization, configuring field types, and leveraging search operators for better relevancy.
 
@@ -25,3 +23,13 @@ This workshop presents the fundamental concepts of the full-text search capabili
 
 5. **Data modeling and schema design for Atlas Search**
   - Best practices
+
+## TODO
+
+Fill in any other blanks for welcoming and setting the stage for the workshop.
+
+## The Exercises
+
+This workshop uses the Atlas Search Playground for the exercises. All you need is a browser and network connectivity. This handy developer tool allows us to work in an isolated, focused environment
+with no setup.
+
