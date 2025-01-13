@@ -6,10 +6,11 @@ There are two distinct ways to map and index the contents of nested documents.
 
 ## `document`
 
-Default dynamic mapping behavior, flattens nested documents into “arrays” of values on main document
+Default dynamic mapping behavior, flattens nested documents into “arrays” of values on main document.
 
 ## `embeddedDocuments`
 
-Attribute pattern `elemMatch`-like matching, more nuanced and expensive than document type flattening
+Attribute pattern `elemMatch`-like matching, more nuanced and expensive than document type flattening.
+See also: https://www.mongodb.com/docs/atlas/atlas-search/field-types/embedded-documents-type/
 
 WARNING: Each nested document mapped as as `embeddedDocuments` counts as an additional "index object".

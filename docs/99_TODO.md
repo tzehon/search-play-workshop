@@ -2,11 +2,11 @@
 * Fire up ProcessCene and generate some analysis images, etc
 * Polish headers/footers
 * Fix publishing to GH Pages
-* rename .md's to .mdx's
-* rename Playground section to something else - it's the workshop practicals
 * should completed/solved playgrounds be saved and linked in here as well?
 * Add coverage of "index objects" counting
 * Add transition verbiage at the end of each page/section to lead into the next one
+* should all links back to mongodb.com have UTMs?  How to use the variables?
+* border around images?  click to make them larger?
 
 Cool Tricks
 Which clause matches?
