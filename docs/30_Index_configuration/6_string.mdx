@@ -1,0 +1,32 @@
+# 📘 String fields
+
+### autocomplete
+blah, don’t do it! ;)
+See also: Relevant As-You-Type Suggestions Search Solution
+
+## string
+Basic examples
+lucene.standard matching case-insensitive: https://search-playground.mongodb.com/tools/code-playground/snapshots/664738af4e0a3f240a5de9d9
+
+## Analysis matters
+“searches” query does not match “Search” with lucene.standard: https://search-playground.mongodb.com/tools/code-playground/snapshots/664739964e0a3f240a5de9db
+“searches” matches “Search” using lucene.english: https://search-playground.mongodb.com/tools/code-playground/snapshots/66473aa64e0a3f240a5de9dd
+
+## Custom analyzers
+Last 4 digit of phone number matching (regex extraction during indexing, keyword analysis at query time): https://search-playground.corp.mongodb.com/tools/code-playground/snapshots/669e6c98d49ef6fad98118ba
+Example of being able to do ‘startsWith’ and ‘endsWith’ using wildcard and ‘reverse’ token filter:
+https://search-playground.mongodb.com/tools/code-playground/snapshots/6683c8bc4a45448733549bbc
+
+Example of being able to do ‘startsWith’, ‘endsWith’ and ‘contains’ using nGrams: https://search-playground.mongodb.com/tools/code-playground/snapshots/6683c999934a05d9b585b6e7 
+Relevancy
+Example of an as-you-type suggest configuration; sophisticated use of multi and several weighted query clauses: https://search-playground.mongodb.com/tools/code-playground/snapshots/66473b744e0a3f240a5de9e1
+$project score?
+$project scoreDetails?
+
+# multi
+Why?
+Relevancy example: boost each multi uniquely
+Multiple language example: may not know the language of the content and each document could be different - multi across all possible languages, query across them as desired at query-time, let relevancy sort it out
+Example of being able to do ‘startsWith’ and ‘endsWith’ using wildcard and ‘reverse’ token filter:
+https://search-playground.mongodb.com/tools/code-playground/snapshots/6683c8bc4a45448733549bbc
+

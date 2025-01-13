@@ -14,6 +14,7 @@ Most data types are queried straightforwardly, and match as one would expect.  W
 
 ## Configuring a real Atlas Search index
 
-* Visual Index Builder
+* Atlas Search Visual Index Builder or JSON Editor
 * via Compass
 * Atlas CLI
+* Driver commands

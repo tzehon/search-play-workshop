@@ -1,0 +1,11 @@
+# Aggregation pipeline search stages
+
+## $search
+
+where the magic happens
+
+## $searchMeta
+
+The `$searchMeta` stage performs the same search that `$search` does, but only returns the results metadata, not actual matching documents. Results metadata includes the count of matching results and facets. This same metadata is available when using `$search` too, accessible in the $$SEARCH_META context variable.
+
+**TODO**: Add exercise using $search and have developer switch to $searchMeta to see the results
