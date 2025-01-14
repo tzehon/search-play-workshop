@@ -94,6 +94,7 @@ const config = {
   trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  onDuplicateRoutes: "ignore",
   favicon: `${favicon}`,
   deploymentBranch: "gh-pages",
   staticDirectories: ["static"],
