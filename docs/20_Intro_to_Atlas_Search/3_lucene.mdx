@@ -1,0 +1,27 @@
+# 📘 Powered by Lucene
+
+https://lucene.apache.org
+
+## Anatomy of a Lucene index
+
+A Lucene index encapsulates specialized data structures unique to each type of data indexed.
+
+  * Numbers and dates: ...
+  * Geo-spatial: ...
+  * Text: via inverted indexes
+
+Each field is indexed independently.
+
+Segmented architecture, append-only, for fast indexing. Background processes to optimize the index
+segments.
+
+## Inverted Index
+
+![inverted index](/img/analysis_lucene_standard.png)
+
+## Search algorithms
+
+  * "index intersection" using skip lists
+  * link to Adrien's presentation
+
+Atlas Search translates its search operators to Lucene's `Query` API.

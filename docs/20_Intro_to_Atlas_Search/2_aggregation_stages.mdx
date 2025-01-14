@@ -6,6 +6,58 @@ where the magic happens
 
 ## $searchMeta
 
-The `$searchMeta` stage performs the same search that `$search` does, but only returns the results metadata, not actual matching documents. Results metadata includes the count of matching results and facets. This same metadata is available when using `$search` too, accessible in the $$SEARCH_META context variable.
+The `$searchMeta` stage performs the same search that `$search` does,
+but only returns the results metadata, not actual matching documents.
+Results metadata includes the count of matching results and facets.
+This same metadata is available when using `$search` too, 
+accessible in the $$SEARCH_META context variable.
 
-**TODO**: Add exercise using $search and have developer switch to $searchMeta to see the results
+## Exercises: search pipeline stages
+
+### Step 1
+1. Navigate to the original Playground used in the last section's exercise
+   https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6782aea0667feaaf06324b87
+2. Press Run. Got the empty `[]` array of results?
+3. Change `$search` to `$searchMeta` (in the Query pane), and press Run again.
+
+<details>
+<summary>Here's the expected results...</summary>
+<div>
+```js
+[
+  {
+    "count": {
+      "lowerBound": 0
+    }
+  }
+]
+```
+</div>
+</details>
+
+### Step 2
+
+1. Now fix the query to match the document as you did previously
+2. Press Run again
+3. Did the `$searchMeta` results change?
+
+<details>
+<summary>Here's the expected results...</summary>
+<div>
+```js
+[
+  {
+    "count": {
+      "lowerBound": 1
+    }
+  }
+]
+```
+</div>
+</details>
+
+## Post $search-stages
+
+  * Such as $sort, $group, etc any stage that consumes **all** documents from previous stage.
+  * $limit, $addFields, $project and the like are fine as they only operate on one doc at a time
+    or cut-off
