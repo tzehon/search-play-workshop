@@ -99,7 +99,7 @@ const config = {
   staticDirectories: ["static"],
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es"],
+    locales: ["en"],
   },
   customFields: {
     startButtonTitle: `${startButtonTitle}`,
