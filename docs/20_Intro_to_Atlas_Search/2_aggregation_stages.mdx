@@ -2,15 +2,23 @@
 
 ## $search
 
-where the magic happens
+Returns matching documents.
+
+Search metadata (count and facets) are available via the $$SEARCH_META aggregation variable.
+Results are returned in descending **score** order or in an optional `sort` order.
 
 ## $searchMeta
+
+Returns a single document of search result metadata including count of matching documents
+and facets requested. No actual collection documents are returned.
 
 The `$searchMeta` stage performs the same search that `$search` does,
 but only returns the results metadata, not actual matching documents.
 Results metadata includes the count of matching results and facets.
 This same metadata is available when using `$search` too, 
 accessible in the $$SEARCH_META context variable.
+
+
 
 ## Exercises: search pipeline stages
 
