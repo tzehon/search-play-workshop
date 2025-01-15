@@ -28,3 +28,31 @@ mapped type.
 ## ObjectId
   * `equals`: https://search-playground.mongodb.com/tools/code-sandbox/snapshots/678506c2b6487c1cfd0bb540
   * `in`: 
+
+## Exercises
+
+### boolean equals
+
+Why doesn't this playground match as expected?
+  * https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6787a56ed8892198a2a8f3f4
+
+  <details>
+  <summary>Explanation</summary>
+  <div>
+  Because $search.equals.value is a string of "true", not an actual boolean. 
+  Here's a corrected pipeline:
+  ```js
+  [
+    {
+      $search: {
+        index: "default",
+        equals: {
+          value: true,
+          path: "in_stock"
+        }
+      }
+    }
+  ]
+  ```
+  </div>
+  </details>

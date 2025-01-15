@@ -1,6 +1,19 @@
 # Data Modeling for Search
 
-https://www.mongodb.com/developer/products/atlas/data-modeling-for-search/${utmParams}
+https://www.mongodb.com/developer/products/atlas/data-modeling-for-search/
 
-* Labs: movies search searching for movies, versus searching for cast members
-* Tips: $merge
+## Techniques
+
+### consistent field types
+
+Schema matters!  A `price` is a number, never a `string`!!
+
+### Nested documents
+
+Avoid `embeddedDocuments` when:
+* There's only one field in them
+* Matching on a flattened structure suffices
+
+## Entity pattern
+  * Labs: movies search searching for movies, versus searching for cast members
+  * Tips: $merge

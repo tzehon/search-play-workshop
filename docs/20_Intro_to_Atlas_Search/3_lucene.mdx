@@ -1,27 +1,63 @@
 # 📘 Powered by Lucene
 
-https://lucene.apache.org
+[Lucene](https://lucene.apache.org), is a Java library providing powerful indexing and search
+features, as well as spellchecking, hit highlighting, and advanced analysis/tokenization
+capabilities.  Without a doubt, you've already used Lucene perhaps without even realizing it.
+It powers the search facilities of countless websites and applications, both public and private.
 
 ## Anatomy of a Lucene index
 
-A Lucene index encapsulates specialized data structures unique to each type of data indexed.
+A Lucene index encapsulates specialized data structures unique to each type of data indexed. 
 
-  * Numbers and dates: ...
-  * Geo-spatial: ...
+  * Numbers, dates, geo-spatial points: Indexed into a k-d structure
+  * Vectors: Hierarchical Navigable Small Worlds (HNSW) data structure
   * Text: via inverted indexes
 
-Each field is indexed independently.
+What Lucene, and Atlas Search, call an "index" is really a collection of separate individual
+per-field data structures.
 
-Segmented architecture, append-only, for fast indexing. Background processes to optimize the index
-segments.
+Lucene is designed for both fast searches and speedy indexing. The indexing speed derives from its
+append-only segmented architecture. When new docuemnts are indexed, they are added to a new segments.
+When that indexing session is complete, the new segments are opened and blended with all the other 
+active segments. Background processes optimize the index segments by combining them to form larger,
+and less, segments over time.
+
+A single Lucene index can handle up to 2 billion documents. There is generally a 1-1 correspondence
+between documents in your collection to Lucene documents, with the exception of nested documents
+mapped as `embeddedDocuments` (a topic covered later). To differentiate the terminology, Atlas Search 
+calls the documents in Lucene index "index objects". See
+[index size and configuration doc](https://www.mongodb.com/docs/atlas/atlas-search/performance/index-performance/#index-size-and-configuration)
+for more details.
 
 ## Inverted Index
 
+Textual content is the heart and soul of Lucene. `string` fields are analzyed. The output of the
+analysis process is a series of **terms**. Terms are generally a normalized version of the individual
+words of the text. These terms are then organized into an **inverted index** data structure.
+This data structure is lexicographically (or alphabetically) ordered. The following image illustrates
+an inverted index built from 3 documents, each with a single string field.
+
 ![inverted index](/img/analysis_lucene_standard.png)
+
+Along with an ordered dictionary of terms, corpus and document-level statistics are also collected into
+the inverted index structure. These statistics include:
+
+  * term frequency (`tf`): the number of times a term occurs in the field
+  * document frequency (`df`): how many documents contain the term
+  * field length: how many terms are there in each field
 
 ## Search algorithms
 
-  * "index intersection" using skip lists
-  * link to Adrien's presentation
+Lucene queries leverage the data structures built at index-time to quickly find, and rank, matching
+documents. The synergy "index intersection" shines when searching across multiple fields in a single
+query. 
 
-Atlas Search translates its search operators to Lucene's `Query` API.
+Atlas Search translates its search operators directly to Lucene's `Query` API.
+
+## Resources
+
+  * ["What is in a Lucene index"](https://www.youtube.com/watch?v=T5RmMNDR5XI) - a very
+    educational presentation delivered by Lucene project committer Adrien Grand.
+  * ["Visualizing Lucene's segment merges"](https://blog.mikemccandless.com/2011/02/visualizing-lucenes-segment-merges.html)
+    - an illustrative set of animations on the how Lucene keeps itself optimized, balancing both
+    indexing and searching needs.

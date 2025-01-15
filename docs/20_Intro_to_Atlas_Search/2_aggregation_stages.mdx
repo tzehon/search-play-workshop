@@ -1,5 +1,9 @@
 # 👐 Aggregation pipeline search stages
 
+The search stages must be the first stage in a pipeline, as they do not accept incoming
+documents but rather only emit documents. There are two stages available, depending on 
+the particular needs.
+
 ## $search
 
 Returns matching documents.
@@ -10,7 +14,7 @@ Results are returned in descending **score** order or in an optional `sort` orde
 ## $searchMeta
 
 Returns a single document of search result metadata including count of matching documents
-and facets requested. No actual collection documents are returned.
+and any facets requested. No actual collection documents are returned.
 
 The `$searchMeta` stage performs the same search that `$search` does,
 but only returns the results metadata, not actual matching documents.
@@ -18,51 +22,49 @@ Results metadata includes the count of matching results and facets.
 This same metadata is available when using `$search` too, 
 accessible in the $$SEARCH_META context variable.
 
-
-
 ## Exercises: search pipeline stages
 
 ### Step 1
-1. Navigate to the original Playground used in the last section's exercise
-   https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6782aea0667feaaf06324b87
-2. Press Run. Got the empty `[]` array of results?
-3. Change `$search` to `$searchMeta` (in the Query pane), and press Run again.
+  1. Navigate to the original Playground used in the last section's exercise
+     https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6782aea0667feaaf06324b87
+  2. Press Run. Got the empty `[]` array of results?
+  3. Change `$search` to `$searchMeta` (in the Query pane), and press Run again.
 
-<details>
-<summary>Here's the expected results...</summary>
-<div>
-```js
-[
-  {
-    "count": {
-      "lowerBound": 0
+  <details>
+  <summary>Here's the expected results...</summary>
+  <div>
+  ```js
+  [
+    {
+      "count": {
+        "lowerBound": 0
+      }
     }
-  }
-]
-```
-</div>
-</details>
+  ]
+  ```
+  </div>
+  </details>
 
 ### Step 2
 
-1. Now fix the query to match the document as you did previously
-2. Press Run again
-3. Did the `$searchMeta` results change?
+  1. Now fix the query to match the document as you did previously
+  2. Press Run again
+  3. Did the `$searchMeta` results change?
 
-<details>
-<summary>Here's the expected results...</summary>
-<div>
-```js
-[
-  {
-    "count": {
-      "lowerBound": 1
+  <details>
+  <summary>Here's the expected results...</summary>
+  <div>
+  ```js
+  [
+    {
+      "count": {
+        "lowerBound": 1
+      }
     }
-  }
-]
-```
-</div>
-</details>
+  ]
+  ```
+  </div>
+  </details>
 
 ## Post $search-stages
 
