@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
-      description="Learn how to use MongoDB Atlas Search Playground in this interactive workshop">
+      description="Learn the fundamentals of Atlas Search in this interactive workshop">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
