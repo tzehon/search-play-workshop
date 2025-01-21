@@ -66,6 +66,14 @@ accessible in the $$SEARCH_META context variable.
   </div>
   </details>
 
+  IMPORTANT: Always specify the `index` parameter. Otherwise it uses `default`(?) and if there's no
+             index by that name, you get `[]` not an error. The Playground only has a `default` index.
+             (and you get an error if you use any other name); be explicit.
+
+             "Yes I double checked that the index name matches." (forum user that has been bitten before)
+             - https://www.mongodb.com/community/forums/t/no-documents-retrieved-using-dynamic-false/310123
+
+
 ## Post $search-stages
 
   * Such as $sort, $group, etc any stage that consumes **all** documents from previous stage.
