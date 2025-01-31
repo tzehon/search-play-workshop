@@ -1,3 +1,16 @@
 # 👐 Exercises
 
-...
+## project the score
+
+Fix this Playground so that the `score` being projected is the relevancy score Atlas Search uses for default sorting.
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb3c3d0df60f0254e5d68">score not projected</Playground> (<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb49ce97570c2714a0811">solution</Playground>)
+
+## score/sort by the `weight` field
+* <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb652e97570c2714a0813">task: set the search (relevance) score to the value of our custom `weight` field</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb6fdd0df60f0254e5d6a">solution</Playground>)
+
+## as-you-type relevancy flexibility
+
+User types "matr": 
+ * How would you do it with the data from the Playgrounds here?
+ * <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/66473b744e0a3f240a5de9e1">one way to do it</Playground> (putting `compound` and `score` to heavy use)

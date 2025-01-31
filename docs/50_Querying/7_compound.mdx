@@ -1,20 +1,19 @@
 # 📘 `compound` operator
 
-The `compound` is a meta-query operator that serves to combine other search operators to form
-more sophisticated queries, enabling optional and mandatory clauses, excluding clauses, and allowing clauses to match documents without affecting their relevancy score.
+The `compound` is a meta-query operator that serves to combine other search operators into a query of optional and mandatory scoring clauses, excluded clauses, and clauses to match documents without affecting their relevancy score.
 
 A compound operator could be used, for example, to filter for products within the "Toys" category that
 must match the term "lego" (or "legos") in the product description, must not cost greater than $100, and optionally match the products that are `used` (`pre_owned` == false) increasing the relevancy of new (not pre_owned) products.
 
-  * should
+A `compound` operator holds these four sets of clauses, each an array of any other search query operators which could also include `compound`'s themselves nested within `compound`:
+
+  * should: these clauses *should* match the document, but not required
   * must
   * mustNot
   * filter
 
-`minimumShouldMatch`
+## should
 
-The key to solid relevancy - match lots of ways, let the best and most matched docs bubble to the top
+If there's only a single `should` clause in all of a `compound`, it effectively becomes an implicit `must`.
 
-## Exercises
-
-  * 
+TODO: add some blurb about `minimumShouldMatch`

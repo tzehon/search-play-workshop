@@ -11,7 +11,7 @@ export default function Playground(props) {
   //   * Embed as iframe? (as well as link to)
   //   * Add UTM support
 
-  const url = props.url || "https://search-playground.mongodb.com/tools/code-sandbox/snapshots/" + props.pid;
+  const url = props.url.replace(".corp","") || "https://search-playground.mongodb.com/tools/code-sandbox/snapshots/" + props.pid;
 
   return (
    <Link {...props} to={url} />

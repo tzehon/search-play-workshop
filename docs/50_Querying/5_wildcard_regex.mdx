@@ -1,11 +1,26 @@
 # 📘 Wildcard and Regex queries
 
+Both of these operators share ...
+
+## Analyzer considerations
+
 Analyzer determines what is matchable. 
 `lucene.keyword` to match across the entire string.
 Any other analyzer to match across the pieces of
 its output.
 
-Prefix matters - index scan, or only prefix-matching
-slice scanned.
+Static prefix matters: index scan, or only prefix-matching slice scanned.
 
-https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/6798adcc28f1e0d8abe42e83
+## `wildcard`
+
+The `wildcard` operator supports two *wildcard* characters, `?` and `*` which can be placed anywhere
+in the query string, one or more of them. 
+
+* `?`: Matches any single character
+* `*`: Matches zero or more characters
+
+## `regex`
+
+The `regex` operator supports a robust regular expression syntax, able to match sophisticated patterns against the terms of an inverted index.
+
+* <Link to="https://www.mongodb.com/docs/atlas/atlas-search/regex/#lucene-regular-expression-behavior">Lucene regular expression behavior</Link>

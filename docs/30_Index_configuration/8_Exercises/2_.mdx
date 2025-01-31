@@ -2,15 +2,15 @@
 
 Atlas Search is quite type sensitive. The BSON type of each field is used to determine which index mapping type to use. And at query time, the type of `value` or `query` is used to determine which index to query for a particular field/path name.
 
-Why don't this playground match as expected?
+## boolean
+Why doesn't this playground match as expected?
   * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dfdaa132ffc76719f57">boolean type mismatch</Playground>
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962e2faa132ffc76719f5b">number ype mismatch</Playground>
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dc7aa132ffc76719f55">ObjectID type mismatch</Playground>
   
   <details>
   <summary>Explanation</summary>
   <div>
-  Because $search.equals.value is a string of "true", not an actual boolean. 
+  The type of `$search.equals.value` is not an actual boolean (it's a `string` of "true") and thus will be looking for an indexed value corresponding that type (which in this case would be a `token` search type).
+
   Here's a corrected pipeline:
   ```js
   [
@@ -28,5 +28,9 @@ Why don't this playground match as expected?
   </div>
   </details>
 
-IMPORTANT: Type matters. This detail can make or break your pipeline:
-     e.g. https://www.mongodb.com/community/forums/t/no-documents-retrieved-using-dynamic-false/310123/3
+## number
+  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962e2faa132ffc76719f5b">number type mismatch</Playground>
+
+## ObjectID
+  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dc7aa132ffc76719f55">ObjectID type mismatch</Playground>
+

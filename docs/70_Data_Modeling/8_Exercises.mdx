@@ -1,3 +1,5 @@
 # 👐 Exercises
 
-...
+## Only make searchable a specific subset of fields
+
+First, see how <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cbc79d0df60f0254e5d75">a string field is automatically searchable</Playground> but now make it so only fields under the `metadata` structure are indexed (and thus this query would then fail to find any matching documents) <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cbbc9d0df60f0254e5d73">solution</Playground>

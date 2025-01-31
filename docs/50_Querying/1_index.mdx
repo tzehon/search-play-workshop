@@ -1,6 +1,35 @@
-# 📘 Query construction
+# 📘 Text search operators
 
 We've already seen and played with the bulk of non-string
-operators, which operate straightforwardly. Let's now turn our attention to the
-two main `string` type operators.
+operators, which operate straightforwardly.
+
+Let's now turn our attention to the various `string` type operators.
+
+## Analysis refresher
+
+Your documents `string` fields are analyzed during indexed. Search operators on string fields navigate the inverted index structure for matches. In order to match the terms as they were indexed, string operators analyze query text, just as field text is analyzed during indexing.
+
+## `text`
+
+To query for individual terms, or words, of a `string` field. 
+
+If the `query` text analyzes to more than one term, the query either makes all terms optional (default) or all terms mandatory (`matchCriteria: "all"`).
+
+### fuzzy matching
+
+The `fuzzy` parameter to the `text` operator allows terms to be matched a bit looser, such that small changes such as a single missing letter, or two letters transcribed, or a letter or two different. 
+
+The easiest way to make a text search fuzzy is by adding `"fuzzy": {}`. There are several nuanced options that can be set within that empty fuzzy document structure, but for now let's just go with the defaults provided by this simple addition.
+
+## `phrase`
+
+The `phrase` operator matches a sequence of words, in proximity to one another. By default,
+the words must match in the same order with no additional words in between, in other words an "exact phrase" match. Again, analysis is performed on the `query` to extract and analyze the terms in the same manner as they were indexed.
+
+### phrase slop
+
+A phrase match can be a bit loose, such that it can match even if there are additional words in between the query terms in the actual documents, or if the query terms are not in the same order, but within a certain proximity. This looseness factor for `phrase` searches is called "slop" (blame Lucene for the terminology). A non-zero, positive, value will allow for that number of additional terms or out of order'ness. The score of a sloppy `phrase` clause is greater when the match is less "sloppy" (the indexed terms are closer to matching the query), and less when the match is "sloppier".
+
+## synonyms
+
 
