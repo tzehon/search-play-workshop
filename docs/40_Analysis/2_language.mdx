@@ -1,4 +1,20 @@
-# Language
+# 📘 Language
 
 你好！Bom dia! Hola!
 
+Language challenges: word breaks, punctuation, stemming, diacritics, case
+
+## Mixed languages
+
+Scenarios:
+  * One field, but each document could be a different language, or multiple languages
+    mixed into a single value. or 
+  * Language-specific fields (title_en, title_zh... `title.zh`/`title.en`): map language-specific fields
+    in the config to language-specific analyzers
+  * Documents segregated by language: separate collections each with appropriate analysis
+
+## Exercises
+
+  * lucene.standard => lucene.english to get a "searched" query to match "search"
+    * Likewise Portuguese stemming example
+  * Chinese analysis

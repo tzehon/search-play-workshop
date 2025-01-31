@@ -7,7 +7,7 @@ Documents are indexed in Lucene using a flexible configuration specification.
 The type of a field determines how it can be indexed, and thus how it can be searched.
 
 Most field types are supported, including all the basic types such as booleans, dates, numerics,
-and strings, as well as ObjectID, UUID, GeoJSON. Null values are also supported implicitly.
+and strings, as well as ObjectID, UUID, GeoJSON types. Null values are also supported implicitly.
 
 ## Mapping
 
@@ -18,7 +18,7 @@ both.
 
 ### Dynamic mapping 
 
-An index configuration defaults a fully dynamic mapping:
+An index configuration defaults to a fully dynamic mapping:
 
 ```
 {
@@ -69,6 +69,8 @@ Using that mapping, this document would only have the `in_stock` field indexed, 
   in_stock: true
 }
 ```
+
+A field path/name can be mapped as an array of supported types. When the type of the document field matches an index mapping for that type, it will be indexed as appropriate for that particular type.
 
 ## Configuring an Atlas Search index
 

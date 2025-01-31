@@ -1,0 +1,32 @@
+# Exercise: My very first playground
+
+Create a <Playground pid="new">new playground</Playground>.
+
+Clear the data box in the lower left (select-all, delete), and then type, paste, or import an array of a few documents. You could copy/paste the below, for example:
+
+```
+[
+  {
+    "_id": 1,
+    "title": "mY vErY fIrSt PlAyGrOuNd"
+  }
+]
+```
+
+Now, in the upper left box, create an aggregation pipeline that uses `$search` as the first (and only, for now)
+stage. Here's one that matches that document with the default configuration: 
+
+```
+[
+  {
+    $search: {
+      index: "default",
+      text: {
+        query: "my playground",
+        path: "title"
+      }
+    }
+  }
+]
+  ```
+Press Run!

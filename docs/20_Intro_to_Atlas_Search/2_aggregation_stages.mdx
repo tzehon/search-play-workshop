@@ -1,8 +1,10 @@
-# 👐 Aggregation pipeline search stages
+# 📘 Aggregation pipeline search stages
 
 The search stages must be the first stage in a pipeline, as they do not accept incoming
 documents but rather only emit documents. There are two stages available, depending on 
-the particular needs.
+the particular needs. 
+
+* `index` name parameter: good idea to be explicit about it, otherwise `default`.
 
 ## $search
 
@@ -13,6 +15,9 @@ Results are returned in descending **score** order or in an optional `sort` orde
 
 ## $searchMeta
 
+TODO: It was mentioned that searchMeta perhaps doesn't warrant (much) coverage in this
+workshop. Perhaps only mention but do no cover?
+
 Returns a single document of search result metadata including count of matching documents
 and any facets requested. No actual collection documents are returned.
 
@@ -21,58 +26,6 @@ but only returns the results metadata, not actual matching documents.
 Results metadata includes the count of matching results and facets.
 This same metadata is available when using `$search` too, 
 accessible in the $$SEARCH_META context variable.
-
-## Exercises: search pipeline stages
-
-### Step 1
-  1. Navigate to the original Playground used in the last section's exercise
-     https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6782aea0667feaaf06324b87
-  2. Press Run. Got the empty `[]` array of results?
-  3. Change `$search` to `$searchMeta` (in the Query pane), and press Run again.
-
-  <details>
-  <summary>Here's the expected results...</summary>
-  <div>
-  ```js
-  [
-    {
-      "count": {
-        "lowerBound": 0
-      }
-    }
-  ]
-  ```
-  </div>
-  </details>
-
-### Step 2
-
-  1. Now fix the query to match the document as you did previously
-  2. Press Run again
-  3. Did the `$searchMeta` results change?
-
-  <details>
-  <summary>Here's the expected results...</summary>
-  <div>
-  ```js
-  [
-    {
-      "count": {
-        "lowerBound": 1
-      }
-    }
-  ]
-  ```
-  </div>
-  </details>
-
-  IMPORTANT: Always specify the `index` parameter. Otherwise it uses `default`(?) and if there's no
-             index by that name, you get `[]` not an error. The Playground only has a `default` index.
-             (and you get an error if you use any other name); be explicit.
-
-             "Yes I double checked that the index name matches." (forum user that has been bitten before)
-             - https://www.mongodb.com/community/forums/t/no-documents-retrieved-using-dynamic-false/310123
-
 
 ## Post $search-stages
 

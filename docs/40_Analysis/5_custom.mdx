@@ -1,4 +1,4 @@
-# Custom analyzers
+# 📘 Custom analyzers
 
 Composed from analyzer building blocks: 
 
@@ -7,7 +7,10 @@ Composed from analyzer building blocks:
 * `tokenizer`: splits text into tokens
   edgeGram, keyword, nGram, regexCaptureGroup, regexSplit, standard, uaxUrlEmail, whitespace
 * `tokenFilters`: processes individual tokens (optional)
-  asciiFolding, daitchMokotoffSoundex, edgeGram, englishPossessive, flattenGraph, icuFolding, icuNormalizer, kStemming, length, lowercase, nGram, porterStemming, regex, reverse, shingle, snowballStemming, spanishPluralStemming, stempel, stopword, trim, wordDelimiterGraph
+  asciiFolding, daitchMokotoffSoundex, edgeGram, englishPossessive,
+  flattenGraph, icuFolding, icuNormalizer, kStemming, length, lowercase,
+  nGram, porterStemming, regex, reverse, shingle, snowballStemming, spanishPluralStemming,
+  stempel, stopword, trim, wordDelimiterGraph
 
 ## Custom analyzers
 
@@ -21,3 +24,13 @@ https://search-playground.mongodb.com/tools/code-playground/snapshots/6683c8bc4a
 ### starts-with
 Example of being able to do ‘startsWith’, ‘endsWith’ and ‘contains’ using nGrams: https://search-playground.mongodb.com/tools/code-playground/snapshots/6683c999934a05d9b585b6e7 
 
+## Exercises
+
+### HTML stripping indexer on English text
+
+https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/6796a293aa132ffc76719f61
+
+From there:
+  * `lucene.english` - "span" and "alert" are indexed/searchable
+  * create an htmlStrip using custom analyzer where those don't match, but "look" and "here" do
+  * now evolve such that "looking" matches too
