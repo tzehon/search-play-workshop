@@ -37,3 +37,20 @@ This is much like the Single Collection Pattern (TODO: link)
 `<etc>`: any other useful fields needed for sorting, matching, filtering, ranking, or display
 
   * Tips: `$merge` can be your good friend!
+
+
+  ```
+  {
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "metadata": [
+        {
+          "type": "document",
+          "dynamic": true
+        }
+      ]
+    }
+  }
+}
+```
