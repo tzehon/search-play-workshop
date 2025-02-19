@@ -6,23 +6,23 @@
 * compound: additive clause scoring
 * scoreDetails w/ demonstrative lab
 * The key to solid relevancy - match lots of ways, let the best and most matched docs bubble to the top
+* https://www.mongodb.com/developer/products/atlas/atlas-search-relevancy-explained/
 
-## Retrieving score and scoreDetails
-* $addFields `searchScore`
-* $project `scoreDetails`
 
-* `"scoreDetails": true` to get `searchScoreDetails`
+## Returning the score
 
-Relevancy
-Example of an as-you-type suggest configuration; sophisticated use of multi and several weighted query clauses: https://search-playground.mongodb.com/tools/code-playground/snapshots/66473b744e0a3f240a5de9e1
+The computed search score is available automatically through the `$meta` context. It can be
+added to documents using either `$addFields` or `$project` using `{"$meta", "searchScore"}`
+
+## Requesting score details
+
+The complete formula used to compute the score can be enabled and returned. Generating the score
+details comes at a slight performance hit, so only do so for diagnostic purposes.
+
+Like the score, once it has been enabled the score details can be returned using `$addFields` or
+`$project`.
+
+* Enable the score details by setting `"scoreDetails": true` within `$search`
+* The score details are then available using `{"$meta", "searchScoreDetails"}`
 
 ![relevancy example](/img/relevancy_example.png)
-
-# Score and score details
-
-How to project/addFields for them
-
-## Exercises
-
-  * Project score
-  * 

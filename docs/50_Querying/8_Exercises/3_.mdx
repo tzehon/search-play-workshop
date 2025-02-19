@@ -2,8 +2,31 @@
 
 ## `wildcard`
 
-* <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cab92d0df60f0254e5d64">words that starts-with not matching as expected</Playground> (<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cac0bd0df60f0254e5d66">solution</Playground>)
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cab92d0df60f0254e5d64">words that starts-with not matching as expected</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+  ```js
+  "analyzer": "lucene.standard"
+  ```
+  The matching needs to occur at the word level, and thus needs (non-keyword) tokenization.
+  
+  <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cac0bd0df60f0254e5d66">solution</Playground>
+  </div>
+</details>
 
 ## ``regex``
 
-* <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679caa71d0df60f0254e5d60">Full string regex not working as expected</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679caadcd0df60f0254e5d62">solution</Playground>)
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679caa71d0df60f0254e5d60">Full string regex not working as expected</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+  ```js
+  "analyzer": "lucene.keyword"
+  ```
+  Matching needs to occur across the full string, and thus needs to be `lucene.keyword`
+  analyzed so that the full string is indexed as a single unit.
+
+  <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679caadcd0df60f0254e5d62">solution</Playground>
+  </div>
+</details>

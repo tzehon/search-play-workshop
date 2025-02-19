@@ -1,36 +1,58 @@
 # Exercises: Type mismatches
 
-Atlas Search is quite type sensitive. The BSON type of each field is used to determine which index mapping type to use. And at query time, the type of `value` or `query` is used to determine which index to query for a particular field/path name.
+Atlas Search is quite type sensitive. The BSON type of each field is used to determine which index mapping type to use. And at query time, the search operator type of `value` is used to determine which index to query for a particular field/path name.
 
 ## boolean
 Why doesn't this playground match as expected?
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dfdaa132ffc76719f57">boolean type mismatch</Playground>
-  
-  <details>
-  <summary>Explanation</summary>
-  <div>
-  The type of `$search.equals.value` is not an actual boolean (it's a `string` of "true") and thus will be looking for an indexed value corresponding that type (which in this case would be a `token` search type).
 
-  Here's a corrected pipeline:
-  ```js
-  [
-    {
-      $search: {
-        index: "default",
-        equals: {
-          value: true,
-          path: "in_stock"
-        }
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dfdaa132ffc76719f57">boolean type mismatch</Playground>
+  
+<details>
+<summary>Explanation</summary>
+<div>
+The type of `$search.equals.value` is not an actual boolean (it's a `string` of "true") and thus will be looking for an indexed value corresponding that type (which in this case would be a `token` field type).
+
+Here's a corrected pipeline:
+```js
+[
+  {
+    $search: {
+      index: "default",
+      equals: {
+        value: true,
+        path: "in_stock"
       }
     }
-  ]
-  ```
-  </div>
-  </details>
+  }
+]
+```
+</div>
+</details>
 
 ## number
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962e2faa132ffc76719f5b">number type mismatch</Playground>
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962e2faa132ffc76719f5b">number type mismatch</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+  The value must be a number, not a string.
+
+  ```js
+  value: 10.99
+  ```
+  </div>
+</details>
+
 
 ## ObjectID
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dc7aa132ffc76719f55">ObjectID type mismatch</Playground>
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dc7aa132ffc76719f55">ObjectId type mismatch</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+  The value must be an ObjectId, not a string.
+
+  ```js
+  value: ObjectId("5a9427648b0beebeb69589a1")
+  ```
+  </div>
+</details>
 

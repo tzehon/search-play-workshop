@@ -4,20 +4,54 @@
 
 Fix this Playground so that the `score` being projected is the relevancy score Atlas Search uses for default sorting.
 
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb3c3d0df60f0254e5d68">score not projected</Playground> (<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb49ce97570c2714a0811">solution</Playground>)
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb3c3d0df60f0254e5d68">score not projected</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    The score is available in the pipeline `$meta` context as `searchScore`. 
+    ```js
+    {"$meta": "searchScore"}
+    ```
+    <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb49ce97570c2714a0811">solution</Playground>
+  </div>
+</details>
+
 
 ## project the score details
 
-* <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cc215e97570c2714a081d">task: add the score details into the results</Playground>
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cc215e97570c2714a081d">add the score details into the results</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    Enable the score details with this setting in `$search`:
+    ```js
+    scoreDetails: true
+    ```
 
-
- (<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cc1b2d0df60f0254e5d85">solution</Playground>)
+    Include the score details by adding this to `$addFields`:
+    ```js
+    "scoreDetails": {
+      "$meta": "searchScoreDetails"
+    }
+    ```
+    <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cc1b2d0df60f0254e5d85">solution</Playground>
+  </div>
+</details>
 
 ## score/sort by the `weight` field
-* <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb652e97570c2714a0813">task: set the search (relevance) score to the value of our custom `weight` field</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb6fdd0df60f0254e5d6a">solution</Playground>)
 
-## as-you-type relevancy flexibility
-
-User types "matr": 
- * How would you do it with the data from the Playgrounds here?
- * <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/66473b744e0a3f240a5de9e1">one way to do it</Playground> (putting `compound` and `score` to heavy use)
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb652e97570c2714a0813">task: set the search (relevance) score to the value of our custom `weight` field</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    Use the `weight` value as the score for the `compound` operator:
+    ```js
+    "score": {
+      "function": {
+        "path": "weight"
+      }
+    }
+    ```
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb6fdd0df60f0254e5d6a">solution</Playground>
+  </div>
+</details>

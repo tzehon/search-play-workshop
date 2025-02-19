@@ -24,7 +24,20 @@ For example: if `cast` are first class citizens for the users, model them as suc
 
 This pattern represents "entities" (in whatever way you want to define them) in a simple typed schema.
 
-This is much like the Single Collection Pattern (TODO: link)
+This is much like the Single Collection Pattern: https://www.mongodb.com/developer/products/mongodb/single-collection-pattern/
+
+```mermaid
+classDiagram
+class Entity {
+  +String _id
+  +String type
+  +String name
+  float weight
+}
+
+Entity <|-- Cast
+Cast: type cast
+```
 
 ### Entity documents
 

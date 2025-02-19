@@ -1,5 +1,32 @@
 # Exercises: `token` type
 
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c2fedd0df60f0254e5d3f">`equals` on `string` mismatch</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c3028d0df60f0254e5d41">fixed</Playground>) The `token` type must be manually/statically mapped; it is not dynamically mapped. 
-  * `in`/`range` (TODO)
-    
+Refer back to the `string` section above for details on configuring the `token` field type.
+
+## `equals` on strings
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c2fedd0df60f0254e5d3f">`equals` on `string` mismatch</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    The `token` type must be manually/statically mapped; it is not dynamically mapped. 
+
+    ```js
+    {
+      "mappings": {
+        "dynamic": true,
+        "fields": {
+          "category": [
+            {
+              "type": "token"
+            }
+          ]
+        }
+      }
+    }
+    ```
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c3028d0df60f0254e5d41">token type `equals` fixed</Playground>
+  </div>
+</details>
+
+## `in` and `range` on strings
+Similarly, the `token` field type is needed to do `in` and `range` queries on exact strings.

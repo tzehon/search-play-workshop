@@ -1,19 +1,127 @@
 # Exercises: Basic types
 
 ## boolean
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1d80e97570c2714a07e0">`equals`</Playground> (<Playground url="https://search-playground.mongodb.com/tools/code-playground/snapshots/669e6ab1d49ef6fad98118b4">fixed</Playground>)
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1e53d0df60f0254e5d2b">`in`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c19c4e97570c2714a07dc">fixed</Playground>)
-  
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1d80e97570c2714a07e0">`equals`</Playground> 
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    path: "in_stock"
+    ```
+
+    <Playground url="https://search-playground.mongodb.com/tools/code-playground/snapshots/669e6ab1d49ef6fad98118b4">boolean `equals` fixed</Playground>
+  </div>
+</details>
+
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1e53d0df60f0254e5d2b">`in`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    value: [true, false]
+    ```
+
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c19c4e97570c2714a07dc">boolean `in` fixed</Playground>
+  </div>
+</details>
+
+
 ## date
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1b0fe97570c2714a07de">`equals`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c20a4d0df60f0254e5d2d">fixed</Playground>)
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1b5fd0df60f0254e5d27">`in`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c210ee97570c2714a07e2">fixed</Playground>)
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c21c8d0df60f0254e5d2f">`range`</Playground> (<Playground url="https://search-playground.mongodb.com/tools/code-playground/snapshots/669e6b18d49ef6fad98118b6">fixed</Playground>)
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1b0fe97570c2714a07de">`equals`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    value: ISODate("2023-11-01T00:00:00.000Z")
+    ```
+
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c20a4d0df60f0254e5d2d">date `equals` fixed</Playground>
+  </div>
+</details>
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c1b5fd0df60f0254e5d27">`in`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    value: [ISODate("2024-02-01T00:00:00.000Z"), ISODate("2023-11-01T00:00:00.000Z"), ISODate("2007-12-25T00:00:00.000Z")]
+    ```
+
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c210ee97570c2714a07e2">date `in` fixed</Playground>
+  </div>
+</details>
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c21c8d0df60f0254e5d2f">`range`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    path: "published_date"
+    ```
+    <Playground url="https://search-playground.mongodb.com/tools/code-playground/snapshots/669e6b18d49ef6fad98118b6">date `range` fixed</Playground>
+  </div>
+</details>
+
 
 ## number
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c25abd0df60f0254e5d35">`equals`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c25e2d0df60f0254e5d37">fixed</Playground>)
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c252ce97570c2714a07e6">`in`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c2569d0df60f0254e5d33">fixed</Playground>)
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c2313d0df60f0254e5d31">`range`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c22bde97570c2714a07e4">fixed</Playground>)
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c25abd0df60f0254e5d35">`equals`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    path: "price"
+    ```
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c25e2d0df60f0254e5d37">number `equals` fixed</Playground>
+  </div>
+</details>
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c252ce97570c2714a07e6">`in`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    value: [19.99, 37.5]
+    ```
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c2569d0df60f0254e5d33">number `in` fixed</Playground>
+  </div>
+</details>
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c2313d0df60f0254e5d31">`range`</Playground> (fix two issues, not just one!)
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    range: {
+      path: "price",
+      gte: 15.00,
+      lte: 25.00
+    }
+    ```
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c22bde97570c2714a07e4">number `range` fixed</Playground>
+  </div>
+</details>
   
 ## ObjectId
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c265dd0df60f0254e5d39">`equals`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962d77aa132ffc76719f53">fixed</Playground>)
-  * <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c26d5d0df60f0254e5d3b">`in`</Playground> (<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c270cd0df60f0254e5d3d">fixed</Playground>)
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c265dd0df60f0254e5d39">`equals`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+    ```js
+    value: ObjectId("5a9427648b0beebeb69589a1")
+    ```
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962d77aa132ffc76719f53">ObjectId `equals` fixed</Playground>
+  </div>
+</details>
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c26d5d0df60f0254e5d3b">`in`</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+     ```js
+     value: [ObjectId("ba94c7648b0beebeb69589a1"), ObjectId("5a9427648b0beebeb69589a1")]
+     ```
+     <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c270cd0df60f0254e5d3d">ObjectId `in` fixed</Playground>
+  </div>
+</details>

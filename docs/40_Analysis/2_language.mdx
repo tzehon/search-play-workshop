@@ -4,6 +4,15 @@
 
 Language challenges: word breaks, punctuation, stemming, diacritics, case
 
+## Stemming
+
+Stemming is a process that reduces a word to a common representation so that it can match
+with words from the same root form. For example, words like "search", "searches", "searched", and
+"searching" would be stemmed (using an English language stemmer) down to just "search".
+
+The stem is not necessarily a real word. For example, the words "country" and "countries" would 
+stem to "countri". The stems are generated during the indexing process, and also during querying.
+
 ## Mixed languages
 
 Scenarios:
@@ -11,10 +20,4 @@ Scenarios:
     mixed into a single value. or 
   * Language-specific fields (title_en, title_zh... `title.zh`/`title.en`): map language-specific fields
     in the config to language-specific analyzers
-  * Documents segregated by language: separate collections each with appropriate analysis
-
-## Exercises
-
-  * lucene.standard => lucene.english to get a "searched" query to match "search"
-    * Likewise Portuguese stemming example
-  * Chinese analysis
+  * Documents segregated by language: separate collections each with appropriate analysis configured
