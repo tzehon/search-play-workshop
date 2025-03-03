@@ -12,7 +12,7 @@
 ## Returning the score
 
 The computed search score is available automatically through the `$meta` context. It can be
-added to documents using either `$addFields` or `$project` using `{"$meta", "searchScore"}`
+added to documents using either `$addFields` or `$project` using `{"$meta": "searchScore"}`
 
 ## Requesting score details
 
@@ -23,6 +23,6 @@ Like the score, once it has been enabled the score details can be returned using
 `$project`.
 
 * Enable the score details by setting `"scoreDetails": true` within `$search`
-* The score details are then available using `{"$meta", "searchScoreDetails"}`
+* The score details are then available using `{"$meta": "searchScoreDetails"}`
 
 ![relevancy example](/img/relevancy_example.png)
