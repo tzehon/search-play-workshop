@@ -40,10 +40,8 @@ const featureList = [
 ];
 
 // UTM stuff
-
 const utmAdvocateName = `erik.hatcher`;
 const utmWorkshopName = 'search-play-workshop'
-
 const utmParams = `utm_campaign=devrel&utm_source=workshop&utm_medium=cta&utm_content=${utmWorkshopName}&utm_term=${utmAdvocateName}`;
 
 // Footer links (probably no need to change them)
@@ -55,23 +53,19 @@ const footerLinks = [
   },
   {
     label: "Forums",
-    href: `https://www.mongodb.com/community/forums/${utmParams}`,
+    href: `https://www.mongodb.com/community/forums/?${utmParams}`,
   },
   {
     label: "Developer Center",
-    href: `https://www.mongodb.com/developer/${utmParams}`,
+    href: `https://www.mongodb.com/developer/?${utmParams}`,
   },
   {
     label: "MongoDB University",
-    href: `https://learn.mongodb.com/${utmParams}`,
+    href: `https://learn.mongodb.com/?${utmParams}`,
   },
   {
     href: `https://github.com/${organizationName}/${workshopName}`,
     label: "This lab in GitHub",
-  },
-  {
-    label: `© ${new Date().getFullYear()} MongoDB, Inc.`,
-    href: "#",
   },
 ];
 
@@ -94,13 +88,12 @@ const config = {
   trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  onDuplicateRoutes: "ignore",
   favicon: `${favicon}`,
   deploymentBranch: "gh-pages",
   staticDirectories: ["static"],
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "es"],
   },
   customFields: {
     startButtonTitle: `${startButtonTitle}`,
@@ -114,7 +107,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-//          editUrl: `https://github.com/${organizationName}/${workshopName}/blob/main`,
+          editUrl: `https://github.com/${organizationName}/${workshopName}/blob/main`,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -136,14 +129,14 @@ const config = {
           hideable: true,
         },
       },
-      // announcementBar: {
-      //   id: "feedback_form",
-      //   content:
-      //     'This is a demonstration that we can put a pop-up message here! Even <a target="_blank" rel="noopener noreferrer" href="#">links</a>',
-      //   backgroundColor: "#fafbfc",
-      //   textColor: "#091E42",
-      //   isCloseable: true,
-      // },
+      announcementBar: {
+        id: "feedback_form",
+        content:
+          'This is a demonstration that we can put a pop-up message here! Even <a target="_blank" rel="noopener noreferrer" href="#">links</a>',
+        backgroundColor: "#fafbfc",
+        textColor: "#091E42",
+        isCloseable: true,
+      },
       navbar: {
         title: `${title}`,
         logo: {
@@ -164,6 +157,7 @@ const config = {
       footer: {
         style: "dark",
         links: footerLinks,
+        copyright: `© ${new Date().getFullYear()} MongoDB, Inc.`
       },
       prism: {
         theme: lightCodeTheme,
