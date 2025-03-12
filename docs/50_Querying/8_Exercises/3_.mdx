@@ -2,7 +2,7 @@
 
 ## `wildcard`
 
-<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cab92d0df60f0254e5d64">words that starts-with not matching as expected</Playground>
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/67d1e0cd20b1632e508742aa">words that starts-with not matching as expected</Playground>
 <details>
   <summary>Solution</summary>
   <div>
@@ -10,14 +10,16 @@
   "analyzer": "lucene.standard"
   ```
   The matching needs to occur at the word level, and thus needs (non-keyword) tokenization.
+
+  And `allowAnalyzedField: true` needs to be set, allowing searches when using a tokenizing analyzer.
   
-  <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cac0bd0df60f0254e5d66">solution</Playground>
+  <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67d1e0f5643f61797f19d31b">solution</Playground>
   </div>
 </details>
 
 ## ``regex``
 
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679caa71d0df60f0254e5d60">Full string regex not working as expected</Playground>
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67d1dff6643f61797f19d319">Full string regex not working as expected</Playground>
 <details>
   <summary>Solution</summary>
   <div>
@@ -27,6 +29,8 @@
   Matching needs to occur across the full string, and thus needs to be `lucene.keyword`
   analyzed so that the full string is indexed as a single unit.
 
-  <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679caadcd0df60f0254e5d62">solution</Playground>
+  <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679caadcd0df60f0254e5d62">solution</Playground>
   </div>
 </details>
+
+
