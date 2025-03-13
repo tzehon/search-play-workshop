@@ -4,7 +4,7 @@
 
 Fix this Playground so that the `score` being projected is the relevancy score Atlas Search uses for default sorting.
 
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679cb3c3d0df60f0254e5d68">score not projected</Playground>
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/67d2ef3c808223b17a90bd7a">score not projected</Playground>
 <details>
   <summary>Solution</summary>
   <div>
@@ -12,14 +12,14 @@ Fix this Playground so that the `score` being projected is the relevancy score A
     ```js
     {"$meta": "searchScore"}
     ```
-    <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb49ce97570c2714a0811">solution</Playground>
+    <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/67d2ef7e643f61797f19d33e">solution</Playground>
   </div>
 </details>
 
 
 ## project the score details
 
-<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cc215e97570c2714a081d">add the score details into the results</Playground>
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/67d2ee9b643f61797f19d33c">add the score details into the results</Playground>
 <details>
   <summary>Solution</summary>
   <div>
@@ -34,13 +34,13 @@ Fix this Playground so that the `score` being projected is the relevancy score A
       "$meta": "searchScoreDetails"
     }
     ```
-    <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cc1b2d0df60f0254e5d85">solution</Playground>
+    <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/67d2eec2808223b17a90bd78">solution</Playground>
   </div>
 </details>
 
 ## score/sort by the `weight` field
 
-<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/679cb652e97570c2714a0813">task: set the search (relevance) score to the value of our custom `weight` field</Playground>
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67d2eddb643f61797f19d33a">task: set the search (relevance) score to the value of our custom `weight` field</Playground>
 <details>
   <summary>Solution</summary>
   <div>
