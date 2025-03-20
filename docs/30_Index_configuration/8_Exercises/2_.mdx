@@ -1,12 +1,13 @@
 # Exercises: Type mismatches
 
-Atlas Search is quite type sensitive. The BSON type of each field is used to determine which index mapping type to use. And at query time, the search operator type of `value` is used to determine which index to query for a particular field/path name.
+Atlas Search is quite type sensitive. The BSON type of each field is used to determine which index mapping type to use. And at query time, the search operator type of the `value` is used to determine which indexed type to query for a particular field/path name.
 
 ## boolean
+
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dfdaa132ffc76719f57">🔗 Playground link: boolean type mismatch</Playground>
+
 Why doesn't this playground match as expected?
 
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dfdaa132ffc76719f57">boolean type mismatch</Playground>
-  
 <details>
 <summary>Explanation</summary>
 <div>
@@ -30,7 +31,10 @@ Here's a corrected pipeline:
 </details>
 
 ## number
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962e2faa132ffc76719f5b">number type mismatch</Playground>
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962e2faa132ffc76719f5b">🔗 Playground link: number type mismatch</Playground>
+
+Why won't the query match?
+
 <details>
   <summary>Solution</summary>
   <div>
@@ -44,7 +48,10 @@ Here's a corrected pipeline:
 
 
 ## ObjectID
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dc7aa132ffc76719f55">ObjectId type mismatch</Playground>
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67962dc7aa132ffc76719f55">🔗 Playground link: ObjectId type mismatch</Playground>
+
+The ObjectId value is correct, but the document does not match. Can you spot, and fix, the issue?
+
 <details>
   <summary>Solution</summary>
   <div>
