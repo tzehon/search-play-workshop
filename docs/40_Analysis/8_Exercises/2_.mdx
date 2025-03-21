@@ -1,15 +1,17 @@
 # Exercises: English
 
-Adjust the index configuration without touching the pipeline or query
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c721ee97570c2714a07ee">🔗 Playground link: "searches" query does not match "Search"</Playground>
 
-<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c721ee97570c2714a07ee">“searches” query does not match “Search” with `lucene.standard`</Playground>
+Adjust the index configuration without touching the pipeline or query.
+The default `lucene.standard` does basic, language-insensitive, analysis. There's a better language-specific analyzer choice that will solve this challenge.
+
 <details>
   <summary>Solution</summary>
   <div>
     ```js
     "analyzer": "lucene.english"
     ```
-    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c3f2ae97570c2714a07ea">solution using `lucene.english` analyzer</Playground>
+    🔗 <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/679c3f2ae97570c2714a07ea">solution using `lucene.english` analyzer</Playground>
   </div>
 </details>
 

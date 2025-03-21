@@ -2,7 +2,10 @@
 
 ## Only make searchable a specific subset of fields
 
-First, see how <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67b5ccc0828ad15116bcce21">a string field is automatically searchable</Playground> but now make it so only fields under the `metadata` structure are indexed (and thus this query would then fail to find any matching documents)
+<Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67b5ccc0828ad15116bcce21">🔗 Playground link: a dynamic string field is automatically searchable</Playground>
+
+Make it so only fields under the `metadata` structure are indexed (and thus this query would then fail to find any matching documents). This is an exercise where no matching documents (an empty array `[]`) is the goal, rather than matching on a field that should not be indexed.
+
 <details>
   <summary>Solution</summary>
   <div>
@@ -22,6 +25,6 @@ First, see how <Playground url="https://search-playground.corp.mongodb.com/tools
       }
     }
     ```
-    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67b5cd163cface474919d070">solution</Playground>
+    <Playground url="https://search-playground.corp.mongodb.com/tools/code-sandbox/snapshots/67b5cd163cface474919d070">🔗 solution</Playground>
   </div>
 </details>
