@@ -10,7 +10,7 @@ const organizationName = "mongodb-developer";
 
 // Main page config
 const title = "Atlas Search Fundamentals";
-const tagLine = "Casino Plus X MongoDB";
+const tagLine = "the workshop";
 const startButtonTitle = "Enter the Atlas Search Fundamentals Workshop";
 const favicon = "img/favicon.svg"
 
@@ -133,7 +133,7 @@ const config = {
       announcementBar: {
         id: "feedback_form",
         content:
-           'CP MongoDB Day: 8th-9th May',
+          'This is a demonstration that we can put a pop-up message here! Even <a target="_blank" rel="noopener noreferrer" href="#">links</a>',
         backgroundColor: "#fafbfc",
         textColor: "#091E42",
         isCloseable: true,
