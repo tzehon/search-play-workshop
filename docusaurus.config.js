@@ -132,6 +132,8 @@ const config = {
       },
       announcementBar: {
         id: "feedback_form",
+        content:
+           'CP MongoDB Day: 8th-9th May',
         backgroundColor: "#fafbfc",
         textColor: "#091E42",
         isCloseable: true,
