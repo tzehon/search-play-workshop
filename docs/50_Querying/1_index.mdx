@@ -30,6 +30,4 @@ the words must match in the same order with no additional words in between, in o
 
 A phrase match can be a bit loose, such that it can match even if there are additional words in between the query terms in the actual documents, or if the query terms are not in the same order, but within a certain proximity. This looseness factor for `phrase` searches is called "slop" (blame Lucene for the terminology). A non-zero, positive, value will allow for that number of additional terms or out of order'ness. The score of a sloppy `phrase` clause is greater when the match is less "sloppy" (the indexed terms are closer to matching the query), and less when the match is "sloppier".
 
-## synonyms
-
 
