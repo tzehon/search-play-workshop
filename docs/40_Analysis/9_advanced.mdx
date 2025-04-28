@@ -17,22 +17,3 @@ See also: <Link to="https://www.mongodb.com/solutions/solutions-library/as-you-t
 Quite a handy similarity matcher, automatically across multi analyzers. 
 
   * https://www.mongodb.com/docs/atlas/atlas-search/morelikethis/
-
-# multi
-Why?
-Relevancy example: boost each multi uniquely
-Multiple language example: may not know the language of the content and each document could be different - multi across all possible languages, query across them as desired at query-time, let relevancy sort it out
-Example of being able to do ‘startsWith’ and ‘endsWith’ using wildcard and ‘reverse’ token filter:
-https://search-playground.mongodb.com/tools/code-playground/snapshots/6683c8bc4a45448733549bbc
-
-# `searchAnalyzer` vs. `analyzer` and which one is chosen when
-
-# Using scoreDetails to glimpse analysis in action:
-
-....
-
-# Configuration options on strings
-
-  * `storedSource`
-  * `synonyms`
-
