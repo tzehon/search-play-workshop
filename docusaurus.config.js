@@ -133,7 +133,7 @@ const config = {
       announcementBar: {
         id: "feedback_form",
         content:
-          'This is a demonstration that we can put a pop-up message here! Even <a target="_blank" rel="noopener noreferrer" href="#">links</a>',
+          '',
         backgroundColor: "#fafbfc",
         textColor: "#091E42",
         isCloseable: true,
