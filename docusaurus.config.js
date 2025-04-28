@@ -10,7 +10,7 @@ const organizationName = "mongodb-developer";
 
 // Main page config
 const title = "Atlas Search Fundamentals";
-const tagLine = "the workshop";
+const tagLine = "CP MongoDB Day 8th-9th May";
 const startButtonTitle = "Enter the Atlas Search Fundamentals Workshop";
 const favicon = "img/favicon.svg"
 
