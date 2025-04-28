@@ -130,14 +130,6 @@ const config = {
           hideable: true,
         },
       },
-      announcementBar: {
-        id: "feedback_form",
-        content:
-          '',
-        backgroundColor: "#fafbfc",
-        textColor: "#091E42",
-        isCloseable: true,
-      },
       navbar: {
         title: `${title}`,
         logo: {
