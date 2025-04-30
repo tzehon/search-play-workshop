@@ -1,0 +1,37 @@
+# Exercises: `facet`
+
+## `facet`
+
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6811c97cd9d0c408e959cd66">🔗 Playground link: facet not returning count of room types</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+  ```js
+  "path": "room_type"
+  ```
+  The field has already been indexed as a facet. Check the index definition.
+
+  Update the path to use the stringFacet field and look at the result. What does it tell you?
+
+  <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6811c9922ebcb4aced00b04a">🔗 solution</Playground>
+  </div>
+</details>
+
+## ``regex``
+
+<Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6811c9cf2ebcb4aced00b04c">🔗 Playground link: Return the facet counts for a specific query</Playground>
+<details>
+  <summary>Solution</summary>
+  <div>
+  ```js
+  "path": "city"
+  ```
+  You can also return the facet count based on a specific query.
+
+  Combine the original facet query with a query for your specific text query.
+
+  <Playground url="https://search-playground.mongodb.com/tools/code-sandbox/snapshots/6811cab4d9d0c408e959cd6a">🔗 solution</Playground>
+  </div>
+</details>
+
+
