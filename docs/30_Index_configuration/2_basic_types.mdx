@@ -1,7 +1,0 @@
-# 📘 Basic field types
-
-Document fields are mapped to a search index based on their BSON data type. This is important, as the type used at query time only queries fields indexed of the corresponding type.
-
-When `dynamic: "true"`, a field is indexed if its field type is supported. 
-
-When a field name is explicitly/statically mapped, it will be indexed when the type of the actual document field also matches the mapped type.
